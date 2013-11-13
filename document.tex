@@ -1,0 +1,88 @@
+%%% Preamble
+\documentclass[DIV=calc,paper=a4,fontsize=11pt,twocolumn]{scrartcl}
+
+\usepackage{lipsum}                                                 
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}								% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}	% Better typography
+\usepackage{amsmath,amsfonts,amsthm}					% Math packages
+\usepackage[pdftex]{graphicx}							% Enable pdflatex
+\usepackage[svgnames]{xcolor}							% Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}									% Converts .eps to .pdf
+\usepackage{subfig}										% Subfigures
+\usepackage{booktabs}									% Nicer tables
+\usepackage{fix-cm}										% Custom fontsizes
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{natdin}
+
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}									% Custom sectioning (see below)
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}}				% Change font of al section commands
+														% bch-b-n: CharterBT-Bold font
+
+\sectionfont{\usefont{OT1}{phv}{b}{n}}					% Change font of \section command
+														% bch-b-n: CharterBT-Bold font
+
+%%% Headers and footers
+\usepackage{fancyhdr}									% Needed to define custom headers/footers
+    \pagestyle{fancy}									% Enabling the custom headers/footers
+\usepackage{lastpage}   
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+% Footer (you may change this to your own needs)
+\lfoot{\footnotesize 2013 \textbullet ~ Here the Title again}
+\cfoot{}
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}  % "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+                    \color{DarkGoldenrod}
+                    {\textsf{#1}}}{}}
+
+
+
+%%% Title, author and date metadata
+\usepackage{titling}										% For custom titles
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}\rule{\linewidth}{1pt}}
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont }
+\title{Here the title of my document}					% Title of your article goes here
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft} \large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+\author{Steffen Tröster \\}											% Author name goes here
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
+                    University of Tampere, 2013							% Institution of author
+                    \par\end{flushleft}\HorRule}
+
+\date{}																% No date
+
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\thispagestyle{fancy}		% Enabling the custom headers/footers for the first page 
+% The first character should be within \initial{}
+\initial{O}\textbf{pen-source software development can be divided into several phases. The phases specified here are derived from Sharma et al. \citep{ZitovaF03}}
+
+\section{VCS's in History}
+Some Stuff to say here
+
+
+\bibliography{library}
+
+\end{document}
