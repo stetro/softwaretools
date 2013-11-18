@@ -55,7 +55,7 @@
 %%% Creating an initial of the very first character of the content
 \usepackage{lettrine}
 \newcommand{\initial}[1]{%
-     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+     \lettrine[lines=2,lhang=0.3,nindent=0em]{
                     \color{headblue}
                     {\textsf{#1}}}{}}
 
@@ -85,12 +85,9 @@
 \maketitle
 \thispagestyle{fancy}		% Enabling the custom headers/footers for the first page 
 % The first character should be within \initial{}
-\initial{C}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\initial{O}ne says that the open source paradigm is one of the most promising strategies to improve the quality and efficiency of software development processes. This essay is introducing into the paradigm of open source, its software development model and its use of software engineering tools during the processes.
+
+% After this introducing part the essay will review an evaluation of the open source paradigm by \citet{fuggetta2003open} and will try to show up typically evaluation properties with affiliated measurements.
 
 \section{Introduction}
 
@@ -99,6 +96,8 @@ The open source software development paradigm is one of the most upcoming way of
 To ensure a proper result in open source development with all different co-developer, from an established community, there should be a sharp regulation progress for input and iterations. Also difficult is the opportunity to develop from everywhere in the world. Therefor the open source development paradigm uses a set of different software engineering tools with features which helps the given in cases like collaboration, status-tracking and testing.
 
 \enquote{To a large extent, the open source culture and methodology are conveyed to new developers via the toolset itself, and through the demonstrated usage of these tools on existing projects.} \citep{Robbins02adoptingoss}
+
+There are different indicators why open source is one of the most promising strategies to improve the quality and efficiency of software development processes. The first one is that projects have a huge crowd of individual users who are willing to contribute to a project by different impulsions. This causes fresh ideas and resources. Thats why companies are more and more focusing on the open source approach. They can successfully develop bigger projects by involving the community. But also public institutions are as even interested on this approach. Open Source can form more security, safety and trustworthiness this division because everyone can check and view the used systems. The last indicator are popular and successful products like \enquote{Linux} and \enquote{Apache} which are gaining more and more shares in their own markets. \citep{fuggetta2003open}
 
 \subsection{Open Source Software Development Model}
 
@@ -132,14 +131,15 @@ In the beginning of open source project centralized version control systems like
 
 \citet{rodriguez2012distributed} are saying that this change to distributed system is giving a lot of advantages. Every developer has now a local development version where he can commit new changes as changeset. Versions are not anymore saved as single file per version but as changeset, which can be merged into every further version. Hence every developer can work on different versions without merging every commit from others in order to contribute to the project.
 
-This new technology reduces also the barriers for non-core developers which can contribute without being connected to a central or remote repository which need to be established and approved. This advantage improves every open source project with new ideas and and manpower. Condensed it is easier to get part of developer communities of open source projects. \citep{rodriguez2012distributed}
+This new technology reduces also the barriers for non-core developers which can contribute without being connected to a central or remote repository which need to be established and approved. This advantage improves every open source project with new ideas and manpower. Condensed it is easier to get part of developer communities of open source projects. \citep{rodriguez2012distributed}
 
 \subsection{Testing and Continues Integration}
 
 Automated testing and continues integration are the first steps to a predefined quality assurance during the development process. With automated testing it is possible to test functional and non-functional requirements by coded tests. Those tests can handle different application layers beginning on unit tests which test single components of software. Integration tests are testing the interfaces between the components of software. System Tests are testing every software component in a completed and integrated system. The last layer acceptance tests are evaluating the system's agreement with the business requirements whether it is acceptable for delivery. \citep{abran2001guide}
 
+\section{Evaluation Criteria}
 
-\section{Evaluation Methodologies}
+\section{Software Quality Evaluation}
 
 \section{Measurement of Evaluation Properties}
 
