@@ -13,7 +13,9 @@
 \usepackage{subfig}										% Subfigures
 \usepackage{booktabs}									% Nicer tables
 \usepackage{fix-cm}										% Custom fontsizes
+\usepackage{csquotes}
 \usepackage[authoryear,round]{natbib}
+\usepackage{float}
 \bibliographystyle{natdin}
 
 
@@ -81,17 +83,26 @@
 
 \section{Introduction}
 
-Open-Source Development 
+The open source software development paradigm is one of the most upcoming way of new software development. Software developed in this way is free in use, spreading and contribution with the condition of continuing the open source paradigm. But this "free" results out of open source development processes are nearly all commercial projects with service opportunities \citep{Wheeler}.
 
- - Open-Source Projects
- - also commercial
- - uses a set of software engineering tools with features that fit the characteristics of open-source development processes
- - "To a large extent, the open-source culture and methodology are conveyed to new developers via the toolset itself, and through the demonstrated usage of these tools on existing projects."
- - 
+To ensure a proper result in open source development with all different co-developer, from an established community, there should be a sharp regulation progress for input and iterations. Also difficult is the opportunity to develop from everywhere in the world. Therefor the open source development paradigm uses a set of different software engineering tools with features which helps the given in cases like collaboration, status-tracking and testing.
 
-\subsection{Open-Source Software Development Model}
+\enquote{To a large extent, the open source culture and methodology are conveyed to new developers via the toolset itself, and through the demonstrated usage of these tools on existing projects.} \citep{Robbins02adoptingoss}
+
+\subsection{Open Source Software Development Model}
+
+Next to the given toolset, there is an Open Source Development Model which is characterized by processes and values of a different kind as traditional proprietary development models. This model takes a new approach for more fluidly development by increasing collaboration, continuous integration and testing. It also involves the end-users deeper into design decisions. Some companies may use a slightly modified version of this model depending on their claims. \citep{Haddad11}
+
+The Model in Figure \ref{fig:feature-life-cycle} shows a typical feature life-cycle. A feature request is coming from the user or developer community of the project by mailing list or issue tracker. It will discussed in the whole community and results to an architecture or design decision which is received into to implementation process if it is accepted. The new feature will after the implementation verified by continuous integration and (automated) testing. This whole process is iteration based and can flow back to the decision process to ensure a necessary project quality when for example a testing of a feature failed and when it contradicts other design decisions. After a successfully testing the feature will be deployed in a new project version and can be maintenanced by the user and development community. \citep{Haddad11}
+
+\begin{figure*}[ht]
+    \includegraphics[width=0.9\textwidth ]{img/feature-life-cycle.png}{}
+    \centering
+    \caption{Feature life-cycle in the open source development model. \citet{Haddad11}}\label{fig:feature-life-cycle}
+\end{figure*}
 
 \section{Tools in Open Source Software Development}
+
 
 
 
