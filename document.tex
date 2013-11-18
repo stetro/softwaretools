@@ -1,5 +1,8 @@
 %%% Preamble
-\documentclass[DIV=calc,paper=a4,fontsize=11pt,twocolumn]{scrartcl}
+\documentclass[DIV=calc,paper=a4,fontsize=9pt,twocolumn]{scrartcl}
+\renewcommand*\sfdefault{lcmss}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
 
 \usepackage{lipsum}                                                 
 \usepackage[utf8x]{inputenc}
@@ -8,7 +11,7 @@
 \usepackage{amsmath,amsfonts,amsthm}					% Math packages
 \usepackage[pdftex]{graphicx}							% Enable pdflatex
 \usepackage[svgnames]{xcolor}							% Enabling colors by their 'svgnames'
-\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+
 \usepackage{epstopdf}									% Converts .eps to .pdf
 \usepackage{subfig}										% Subfigures
 \usepackage{booktabs}									% Nicer tables
@@ -20,15 +23,16 @@
 \definecolor{headblue}{HTML}{15778E}
 \definecolor{borderblue}{HTML}{074C5C}
 
-
-
 %%% Custom sectioning (sectsty package)
-\usepackage{sectsty}									% Custom sectioning (see below)
+\usepackage{sectsty}		
+							% Custom sectioning (see below)
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}}				% Change font of al section commands
 														% bch-b-n: CharterBT-Bold font
 
 \sectionfont{\usefont{OT1}{phv}{b}{n}}					% Change font of \section command
 														% bch-b-n: CharterBT-Bold font
+
+
 
 %%% Headers and footers
 \usepackage{fancyhdr}									% Needed to define custom headers/footers
@@ -40,7 +44,7 @@
 \chead{}
 \rhead{}
 % Footer (you may change this to your own needs)
-\lfoot{\footnotesize 2013 \textbullet ~ Here the Title again}
+\lfoot{\footnotesize 2013 \textbullet ~ Tools and Evaluation Methods used in Open Source Development}
 \cfoot{}
 \rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}  % "Page 1 of 2"
 \renewcommand{\headrulewidth}{0.0pt}
@@ -62,8 +66,8 @@
 
 \newcommand{\HorRule}{\color{headblue}\rule{\linewidth}{1pt}}
 
-\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{borderblue} \selectfont }
-\title{Here the title of my document}					% Title of your article goes here
+\pretitle{\vspace{-30pt} \begin{flushleft}  \fontsize{30}{30} \usefont{OT1}{phv}{b}{n} \color{borderblue} \selectfont }
+\title{Tools and Evaluation Methods used in Open Source Development}    % Title of your article goes here
 \posttitle{\par\end{flushleft}\vskip 0.5em}
 
 \preauthor{\begin{flushleft} \large \usefont{OT1}{phv}{b}{sl} \color{headblue}}
@@ -81,7 +85,12 @@
 \maketitle
 \thispagestyle{fancy}		% Enabling the custom headers/footers for the first page 
 % The first character should be within \initial{}
-\initial{C}\textbf{oming Sooon! Hopefully}
+\initial{C}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Introduction}
 
@@ -98,7 +107,7 @@ Next to the given toolset, there is an Open Source Development Model which is ch
 The Model in Figure \ref{fig:feature-life-cycle} shows a typical feature life-cycle. A feature request is coming from the user or developer community of the project by mailing list or issue tracker. It will discussed in the whole community and results to an architecture or design decision which is received into to implementation process if it is accepted. The new feature will after the implementation verified by continuous integration and (automated) testing. This whole process is iteration based and can flow back to the decision process to ensure a necessary project quality when for example a testing of a feature failed and when it contradicts other design decisions. After a successfully testing the feature will be deployed in a new project version and can be maintenanced by the user and development community. \citep{Haddad11}
 
 \begin{figure*}[ht]
-    \includegraphics[width=0.9\textwidth ]{img/feature-life-cycle.png}{}
+    \includegraphics[width=0.8\textwidth ]{img/feature-life-cycle.png}{}
     \centering
     \caption{Feature life-cycle in the open source development model. \citet{Haddad11}}\label{fig:feature-life-cycle}
 \end{figure*}
@@ -113,15 +122,26 @@ Back to the model of \citet{Haddad11}, each process is constituting a special ty
 
 The most important action, which is done in every process of the open source software development model is communication. Almost every project is using mailing lists to discuss design decisions and new features and approaches with the developer and user community. Some projects are using asynchrounus communication like IRC in addition, but it is still a more or less organized communication process. Next to these direct communication techniques, there are are also the projects websites, FAQ's and Wikis in use to communicate news and important information about the project to users which are not participating. \citep{ApacheFoundation13} 
 
-An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{Github Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision. Even big projects  \citep{Robbins02adoptingoss}
+An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{Github Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision.
 
 \subsection{Version Control and Collaboration}
 
+How to enable people from all over the world to collaborate on one specific open source project at the same time? Version control systems are the most important tools during the implementation phase of the open source development model. This tools offer each developer to contribute new code, files and documentation for the given project by merging them with other contributions together. 
 
+In the beginning of open source project centralized version control systems like \enquote{Subversion} or \enquote{Concurrent Versions System} where widely in use and were over the years replaced by distributed version control systems like \enquote{Git}. 
+
+\citet{rodriguez2012distributed} are saying that this change to distributed system is giving a lot of advantages. Every developer has now a local development version where he can commit new changes as changeset. Versions are not anymore saved as single file per version but as changeset, which can be merged into every further version. Hence every developer can work on different versions without merging every commit from others in order to contribute to the project.
+
+This new technology reduces also the barriers for non-core developers which can contribute without being connected to a central or remote repository which need to be established and approved. This advantage improves every open source project with new ideas and and manpower. Condensed it is easier to get part of developer communities of open source projects. \citep{rodriguez2012distributed}
 
 \subsection{Testing and Continues Integration}
-\subsubsection{Testing Methods}
 
+Automated testing and continues integration are the first steps to a predefined quality assurance during the development process. With automated testing it is possible to test functional and non-functional requirements by coded tests. Those tests can handle different application layers beginning on unit tests which test single components of software. Integration tests are testing the interfaces between the components of software. System Tests are testing every software component in a completed and integrated system. The last layer acceptance tests are evaluating the system's agreement with the business requirements whether it is acceptable for delivery. \citep{abran2001guide}
+
+
+\section{Evaluation Methodologies}
+
+\section{Measurement of Evaluation Properties}
 
 % "When developers evaluate the reusability of a component, they often check some of the issues in the project issue tracker and look for signs of activity. Conversely, when developers feel that they have no recourse when defects are found in a reusable component, they are likely to cease reusing it." \citep{Robbins02adoptingoss}
 
