@@ -17,6 +17,8 @@
 \usepackage[authoryear,round]{natbib}
 \usepackage{float}
 \bibliographystyle{natdin}
+\definecolor{headblue}{HTML}{15778E}
+\definecolor{borderblue}{HTML}{074C5C}
 
 
 
@@ -50,7 +52,7 @@
 \usepackage{lettrine}
 \newcommand{\initial}[1]{%
      \lettrine[lines=3,lhang=0.3,nindent=0em]{
-                    \color{DarkGoldenrod}
+                    \color{headblue}
                     {\textsf{#1}}}{}}
 
 
@@ -58,13 +60,13 @@
 %%% Title, author and date metadata
 \usepackage{titling}										% For custom titles
 
-\newcommand{\HorRule}{\color{DarkGoldenrod}\rule{\linewidth}{1pt}}
+\newcommand{\HorRule}{\color{headblue}\rule{\linewidth}{1pt}}
 
-\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont }
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule \fontsize{35}{35} \usefont{OT1}{phv}{b}{n} \color{borderblue} \selectfont }
 \title{Here the title of my document}					% Title of your article goes here
 \posttitle{\par\end{flushleft}\vskip 0.5em}
 
-\preauthor{\begin{flushleft} \large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+\preauthor{\begin{flushleft} \large \usefont{OT1}{phv}{b}{sl} \color{headblue}}
 \author{Steffen Tröster \\}											% Author name goes here
 \postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
                     University of Tampere, 2013							% Institution of author
@@ -79,11 +81,11 @@
 \maketitle
 \thispagestyle{fancy}		% Enabling the custom headers/footers for the first page 
 % The first character should be within \initial{}
-\initial{O}\textbf{pen-source software development can be divided into several phases. The phases specified here are derived from Sharma et al. \citep{ZitovaF03}}
+\initial{C}\textbf{oming Sooon! Hopefully}
 
 \section{Introduction}
 
-The open source software development paradigm is one of the most upcoming way of new software development. Software developed in this way is free in use, spreading and contribution with the condition of continuing the open source paradigm. But this "free" results out of open source development processes are nearly all commercial projects with service opportunities \citep{Wheeler}.
+The open source software development paradigm is one of the most upcoming way of new software development. Software developed in this way is free in use, spreading and contribution with the condition of continuing the open source paradigm. But this \enquote{free} results out of open source development processes are nearly all commercial projects with service opportunities \citep{Wheeler}.
 
 To ensure a proper result in open source development with all different co-developer, from an established community, there should be a sharp regulation progress for input and iterations. Also difficult is the opportunity to develop from everywhere in the world. Therefor the open source development paradigm uses a set of different software engineering tools with features which helps the given in cases like collaboration, status-tracking and testing.
 
@@ -108,10 +110,20 @@ Software Engineering tools which are created and used in open source software de
 Back to the model of \citet{Haddad11}, each process is constituting a special type of tool. First of all communication tools are important to contribute feature requests, issues and bugs to a project. These tools are also used to make the design decisions in the developer and user community. The second topic of tools are version control systems and collaboration tools to facilitate parallel contribution from all over the world. The software need to be tested according to the given open source model after contribution. Therefor a toolset of different testing and continues integration tools are available. They will be discussed in the following sub chapters.
 
 \subsection{Communication - Issue and Bugtracking}
+
+The most important action, which is done in every process of the open source software development model is communication. Almost every project is using mailing lists to discuss design decisions and new features and approaches with the developer and user community. Some projects are using asynchrounus communication like IRC in addition, but it is still a more or less organized communication process. Next to these direct communication techniques, there are are also the projects websites, FAQ's and Wikis in use to communicate news and important information about the project to users which are not participating. \citep{ApacheFoundation13} 
+
+An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{Github Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision. Even big projects  \citep{Robbins02adoptingoss}
+
 \subsection{Version Control and Collaboration}
+
+
+
 \subsection{Testing and Continues Integration}
 \subsubsection{Testing Methods}
 
+
+% "When developers evaluate the reusability of a component, they often check some of the issues in the project issue tracker and look for signs of activity. Conversely, when developers feel that they have no recourse when defects are found in a reusable component, they are likely to cease reusing it." \citep{Robbins02adoptingoss}
 
 
 \bibliography{library}
