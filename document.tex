@@ -137,11 +137,89 @@ This new technology reduces also the barriers for non-core developers which can 
 
 Automated testing and continues integration are the first steps to a predefined quality assurance during the development process. With automated testing it is possible to test functional and non-functional requirements by coded tests. Those tests can handle different application layers beginning on unit tests which test single components of software. Integration tests are testing the interfaces between the components of software. System Tests are testing every software component in a completed and integrated system. The last layer acceptance tests are evaluating the system's agreement with the business requirements whether it is acceptable for delivery. \citep{abran2001guide}
 
-\section{Evaluation Criteria}
+\section{Evaluation Models}
 
-\section{Software Quality Evaluation}
+There are two major concerns of open source software evaluation. The first concern is the evaluation to ensure a specific open source software quality of a companies or communities product during the open source software development model. 
 
-\section{Measurement of Evaluation Properties}
+Next to the software quality evaluation there are also different evaluation methods to decide the use of a specific system. Often a company searches for open source product to solve a given issue and there are more than one solution available that solves the issue. Since the quality of open source software products varies widely, a company which want to use a specific product need to decide which is the best available open source system \citep{stol2010comparison}. There are over 20 evaluation models available for this purpose. They are listed in a research paper of \citet{stol2010comparison}.
+
+This essay will review respective one of the major concerts. First the Selection Process of Open Source Software by \citet{lee2007study} and than the Source Quality Observatory for Open Source Software (SQO-OSS) by \citet{samoladas2008sqo}.
+
+\subsection{Selection Process of Open Source Software}
+
+The Selection Process of Open Source Software is focusing on offering a metric to compare different open source solutions for a given issue or problem in companies. Because it is difficult to identify the target open source software which is satisfying the systems requirements among all other open source projects. \citep{lee2007study}
+
+\enquote{Without a formal methodology that implements a standardized analytical framework, organizations are limited in their ability to assess the maturity of a product.} \citep{golden08}
+
+\citet{lee2007study} are saying that although it is possible to identify some open source systems satisfying requirements, there isn't a variety specification to gain. This is because this system communities doesn't provide information for analyzing. Hence these step cause many trials and errors and there is a need to solve these problems.
+
+The selection process shown by \citet{lee2007study} is based on five steps, which can be seen in Figure \ref{fig:selection-process.png}:
+
+\begin{enumerate}
+    \item Identifying Requirements: What requirements are required by the open source system?
+    \item Identifying first OSS Candidate: By selecting keywords out of the requirements, the first candidates can be selected by searching for this keywords and given conditions like running platform or used language.
+    \item Identifying second OSS Candidate: Searching for exceptions and quality requirements in NFRs to restrict the choice.
+    \item Establishing Assessment Criteria: This step identifies open source software candidates and arranges to evaluate them, and decides weight on detailed function of each module and maps candidates to prepare for evaluation.
+    \item OSS Assessing and Selecting: This step carries out an evaluation of the selected open source systems which will be used for the given issue. 
+\end{enumerate}
+
+
+\begin{figure}[ht]
+    \includegraphics[width=0.5\textwidth ]{img/selectionprocess.png}{}
+    \centering
+    \caption{Selection Process of OSS. \citet{lee2007study}}\label{fig:selection-process.png}
+\end{figure}
+
+\subsection{Source Quality Observatory for Open Source Software}
+
+The SQO-OSS model by \citet{samoladas2008sqo} is focusing on automated software quality assurance. This enables an automatic metrics collection approach and thereby a continuous quality monitoring system can be established which can be seen in Chapter \ref{sec:automated-quality-assurance}. It also takes the community factors into account if only those community factors that can be measured automatically. Next these two community factors it also focuses on the fundamental aspects of open source software quality like the project maintainability, reliability and security.
+
+This model is subdividing every criteria until it is automatically measurable by analyzing source code factors and community attributes. Figure \ref{fig:sqs-oss} is showing the different levels of quality criteria with each subdivision for the specific measurement. Metrics defined by \citet{samoladas2008sqo} are for example for the criteria Changeability: Average size of statements, Vocabulary frequency, Number of unconditional jumps, Number of nested levels, Coupling between objects (CBO), Lack of cohesion (LCOM) and Depth of inheritance tree (DIT). On the community side the metrics for example of the criteria Maturity are: Number of open critical bugs in the last 6 months and Number of open bugs in the last six months. The measurement for this criteria are specified in categories Excellent (E), Good (G), Fair (F) and Poor (P). \citep{samoladas2008sqo}
+
+\begin{figure}[ht]
+    \includegraphics[width=0.5\textwidth ]{img/sqsoss.png}{}
+    \centering
+    \caption{The SQS-OSS quality model. \citet{samoladas2008sqo}}\label{fig:sqs-oss}
+\end{figure}
+
+\subsection{Comparison Framework for Open Source Software Evaluation Methods}
+
+Now the important question is, how to choose between all the different evaluation methods. \citet{stol2010comparison} have already shown the 20 different evaluation methods. They also show if these method comes from industry or research and if it provide a well-defined procedure for applying or not. Next to these information they also offering a framework to compare these evaluation methods.
+
+They call it Framework Framework fOr Comparing Open Source Software Evaluation Methods (FOCOSEM). The following list of metrics are a short overview of this Framework
+
+\begin{enumerate}
+    \item Method Context
+    \begin{enumerate}
+        \item Specific goal: What is the particular goal of the method?
+        \item Functionality evaluation: Is functionality compliance part of the evaluation method?
+        \item Results publicly available: Are evaluations of OSS products stored in a publicly accessible repository?
+    \end{enumerate}
+    \item Method User
+    \begin{enumerate}
+        \item Required skills: What skills does the user need to use the method?
+        \item Intended users: Who are the intended users of the method?
+    \end{enumerate}
+    \item Method Process
+    \begin{enumerate}
+        \item Method's activities: What are the evaluation method's activities and steps? 
+        \item Number of criteria: How many criteria are used in the evaluation?
+        \item Evaluation categories: What are the method's categories of criteria based on which the OSS product is evaluated?
+        \item Output: What are the outputs of the evaluation method?
+        \item Tool support: Is the evaluation method supported by a tool?
+    \end{enumerate}
+    \item Method Evaluation
+    \begin{enumerate}
+        \item Validation: Has the evaluation method been validated?
+        \item Maturity stage: What is the maturity stage of the evaluation method?
+    \end{enumerate}
+\end{enumerate}
+
+\enquote{We note that the objective of FOCOSEM is not to make any judgments about different OSS evaluation methods. Instead, we aim to provide insights that may help practitioners to select a suitable OSS evaluation method.} \citep{stol2010comparison}
+
+\section{Automated Quality Assurance\label{sec:automated-quality-assurance}}
+
+
 
 % "When developers evaluate the reusability of a component, they often check some of the issues in the project issue tracker and look for signs of activity. Conversely, when developers feel that they have no recourse when defects are found in a reusable component, they are likely to cease reusing it." \citep{Robbins02adoptingoss}
 
