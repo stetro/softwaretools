@@ -87,23 +87,25 @@
 % The first character should be within \initial{}
 \initial{O}ne says that the open source paradigm is one of the most promising strategies to improve the quality and efficiency of software development processes. This essay is introducing into the paradigm of open source, its software development model and its use of software engineering tools during the processes.
 
+It also reviews some evaluation models and a framework to choose the right evaluation model for the specific need. After this introduction it will give an example how to use automated quality assurance with two sample open source projects based on different technologies.
+
 % After this introducing part the essay will review an evaluation of the open source paradigm by \citet{fuggetta2003open} and will try to show up typically evaluation properties with affiliated measurements.
 
 \section{Introduction}
 
-The open source software development paradigm is one of the most upcoming way of new software development. Software developed in this way is free in use, spreading and contribution with the condition of continuing the open source paradigm. But this \enquote{free} results out of open source development processes are nearly all commercial projects with service opportunities \citep{Wheeler}.
+The open source software development paradigm is one of the most upcoming way of new software development. Software developed in this way is free in use, spreading and contribution with the condition of continuing the open source paradigm. But this \enquote{free} results out of open source development processes are nearly all commercial projects which are raising money with service offers \citep{Wheeler}.
 
-To ensure a proper result in open source development with all different co-developer, from an established community, there should be a sharp regulation progress for input and iterations. Also difficult is the opportunity to develop from everywhere in the world. Therefor the open source development paradigm uses a set of different software engineering tools with features which helps the given in cases like collaboration, status-tracking and testing.
+To ensure a proper result in open source development with all different co-developer, from an established community, there should be a sharp regulation progress for input and iterations. Also difficult is the opportunity to develop from all over the world. Therefor the open source development paradigm uses a set of different software engineering tools with features which helps in given cases like collaboration, status-tracking and testing.
 
 \enquote{To a large extent, the open source culture and methodology are conveyed to new developers via the toolset itself, and through the demonstrated usage of these tools on existing projects.} \citep{Robbins02adoptingoss}
 
-There are different indicators why open source is one of the most promising strategies to improve the quality and efficiency of software development processes. The first one is that projects have a huge crowd of individual users who are willing to contribute to a project by different impulsions. This causes fresh ideas and resources. Thats why companies are more and more focusing on the open source approach. They can successfully develop bigger projects by involving the community. But also public institutions are as even interested on this approach. Open Source can form more security, safety and trustworthiness this division because everyone can check and view the used systems. The last indicator are popular and successful products like \enquote{Linux} and \enquote{Apache} which are gaining more and more shares in their own markets. \citep{fuggetta2003open}
+There are different indicators why open source is one of the most promising strategies to improve the quality and efficiency of software development processes. The first one is that projects have a huge crowd of individual users who are willing to contribute to a project by different impulsions. This causes fresh ideas and resources. Thats why companies are more and more focusing on the open source approach. They can successfully develop bigger projects by involving the community. But also public institutions are as even interested on this approach. Open Source can form more security, safety and trustworthiness in this division because everyone can check and view the used systems. The last indicator are popular and successful products like \enquote{Linux} and \enquote{Apache} which are gaining more and more leading shares in their own markets. \citep{fuggetta2003open}
 
 \subsection{Open Source Software Development Model}
 
-Next to the given toolset, there is an Open Source Development Model which is characterized by processes and values of a different kind as traditional proprietary development models. This model takes a new approach for more fluidly development by increasing collaboration, continuous integration and testing. It also involves the end-users deeper into design decisions. Some companies may use a slightly modified version of this model depending on their claims. \citep{Haddad11}
+Next to the given toolset, there is an open source development model which is characterized by processes and values of a different kind as traditional proprietary development models. This model takes a new approach for more fluidly development by increasing collaboration, continuous integration and testing. It also involves the end-users deeper into design decisions. Some companies may use a slightly modified version of this model depending on their claims. \citep{Haddad11}
 
-The Model in Figure \ref{fig:feature-life-cycle} shows a typical feature life-cycle. A feature request is coming from the user or developer community of the project by mailing list or issue tracker. It will discussed in the whole community and results to an architecture or design decision which is received into to implementation process if it is accepted. The new feature will after the implementation verified by continuous integration and (automated) testing. This whole process is iteration based and can flow back to the decision process to ensure a necessary project quality when for example a testing of a feature failed and when it contradicts other design decisions. After a successfully testing the feature will be deployed in a new project version and can be maintenanced by the user and development community. \citep{Haddad11}
+The Model in Figure \ref{fig:feature-life-cycle} shows a typical feature life-cycle. A feature request is coming from the user or developer community of the project by mailing list or issue tracker. It will discussed in the whole community and results to an architecture or design decision which is received into an implementation process if it is accepted. After the implementation the new feature will be verified by continuous integration and (automated) testing. This whole process is iteration based and can flow back to the decision process to ensure a necessary project quality when for example a testing of a feature failed or when it contradicts other design decisions. After a successfully testing the feature will be deployed in a new project version and can be maintained by the user and development community. \citep{Haddad11}
 
 \begin{figure*}[ht]
     \includegraphics[width=0.8\textwidth ]{img/feature-life-cycle.png}{}
@@ -113,35 +115,37 @@ The Model in Figure \ref{fig:feature-life-cycle} shows a typical feature life-cy
 
 \section{Tools in Open Source Software Development}
 
-Software Engineering tools which are created and used in open source software development are fitting to the different processes of the given software development model. These tools are widly the result of daily practices so that they carry support for the given use cases in open source software development. \citep{Robbins02adoptingoss} 
+Software Engineering tools which are created and used in open source software development are fitting to the different processes of the given software development model. These tools are widely the result of daily practices so that they carry support for the given use cases in open source software development. \citep{Robbins02adoptingoss} 
 
 Back to the model of \citet{Haddad11}, each process is constituting a special type of tool. First of all communication tools are important to contribute feature requests, issues and bugs to a project. These tools are also used to make the design decisions in the developer and user community. The second topic of tools are version control systems and collaboration tools to facilitate parallel contribution from all over the world. The software need to be tested according to the given open source model after contribution. Therefor a toolset of different testing and continues integration tools are available. They will be discussed in the following sub chapters.
 
 \subsection{Communication - Issue and Bugtracking}
 
-The most important action, which is done in every process of the open source software development model is communication. Almost every project is using mailing lists to discuss design decisions and new features and approaches with the developer and user community. Some projects are using asynchrounus communication like IRC in addition, but it is still a more or less organized communication process. Next to these direct communication techniques, there are are also the projects websites, FAQ's and Wikis in use to communicate news and important information about the project to users which are not participating. \citep{ApacheFoundation13} 
+The most important action, which is done in every process of the open source software development model is communication. Almost every project is using mailing lists to discuss design decisions and new features and approaches with the developer and user community. Some projects are using asynchronous communication like IRC in addition, but it is still a more or less organized communication process. Next to these direct communication techniques, there are are also the projects websites, FAQ's and Wikis in use to communicate news and important information about the project to users which are not participating. \citep{ApacheFoundation13} 
 
 An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{Github Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision.
 
 \subsection{Version Control and Collaboration}
 
-How to enable people from all over the world to collaborate on one specific open source project at the same time? Version control systems are the most important tools during the implementation phase of the open source development model. This tools offer each developer to contribute new code, files and documentation for the given project by merging them with other contributions together. 
+How to enable people from all over the world to collaborate on one specific open source project at the same time? Version control systems are the most important tools during the implementation phase of the open source development model. This tools offer each developer to contribute new code, files and documentation for the given project by merging them with other contributions. 
 
 In the beginning of open source project centralized version control systems like \enquote{Subversion} or \enquote{Concurrent Versions System} where widely in use and were over the years replaced by distributed version control systems like \enquote{Git}. 
 
 \citet{rodriguez2012distributed} are saying that this change to distributed system is giving a lot of advantages. Every developer has now a local development version where he can commit new changes as changeset. Versions are not anymore saved as single file per version but as changeset, which can be merged into every further version. Hence every developer can work on different versions without merging every commit from others in order to contribute to the project.
 
-This new technology reduces also the barriers for non-core developers which can contribute without being connected to a central or remote repository which need to be established and approved. This advantage improves every open source project with new ideas and manpower. Condensed it is easier to get part of developer communities of open source projects. \citep{rodriguez2012distributed}
+This new technology reduces also the barriers for non-core developers of an open source project which can contribute without being connected to a central or remote repository which further need to be established and approved. This advantage improves every open source project with new ideas and manpower. Condensed it is easier to get part of developer communities of open source projects. \citep{rodriguez2012distributed}
 
 \subsection{Testing and Continues Integration}
 
 Automated testing and continues integration are the first steps to a predefined quality assurance during the development process. With automated testing it is possible to test functional and non-functional requirements by coded tests. Those tests can handle different application layers beginning on unit tests which test single components of software. Integration tests are testing the interfaces between the components of software. System Tests are testing every software component in a completed and integrated system. The last layer acceptance tests are evaluating the system's agreement with the business requirements whether it is acceptable for delivery. \citep{abran2001guide}
 
+With continues integration are integration problems between software modules during the process and thereby earlier found. These can be fixed at the same time. With this mechanism is also always a running system for demo, testing or distribution purpose available.
+
 \section{Evaluation Models}
 
-There are two major concerns of open source software evaluation. The first concern is the evaluation to ensure a specific open source software quality of a companies or communities product during the open source software development model. 
+There are two major concerns of open source software evaluation. The first concern is the evaluation to ensure a specific open source software quality of a companies or communities product during the open source software development process. 
 
-Next to the software quality evaluation there are also different evaluation methods to decide the use of a specific system. Often a company searches for open source product to solve a given issue and there are more than one solution available that solves the issue. Since the quality of open source software products varies widely, a company which want to use a specific product need to decide which is the best available open source system \citep{stol2010comparison}. There are over 20 evaluation models available for this purpose. They are listed in a research paper of \citet{stol2010comparison}.
+Next to the software quality evaluation there are also different evaluation methods to support decisions for using a specific system. Often a company searches for open source product to solve a given issue and there are more than one solution available that solves the issue. Since the quality of open source software products varies widely, a company which want to use a specific product need to decide which is the best available open source system \citep{stol2010comparison}. There are over 20 evaluation models available for this purpose. They are listed in a research paper of \citet{stol2010comparison}.
 
 This essay will review respective one of the major concerts. First the Selection Process of Open Source Software by \citet{lee2007study} and than the Source Quality Observatory for Open Source Software (SQO-OSS) by \citet{samoladas2008sqo}.
 
@@ -219,10 +223,13 @@ They call it Framework Framework fOr Comparing Open Source Software Evaluation M
 
 \section{Automated Quality Assurance\label{sec:automated-quality-assurance}}
 
+This chapter will deal with an approaches for automated quality assurance. I personally think that an automated quality assurance process can be established in every open source project during the testing and/or continues integration. I'm going to show this with two projects which have a completely different technology stack. 
 
+The first project is called georeport and it is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development. The second open source project is called amcgala. It is a pedagogical graphic framework based on Java.
 
-% "When developers evaluate the reusability of a component, they often check some of the issues in the project issue tracker and look for signs of activity. Conversely, when developers feel that they have no recourse when defects are found in a reusable component, they are likely to cease reusing it." \citep{Robbins02adoptingoss}
+\subsection{Continues Integration in georeport}
 
+This nodeJS based project is using different librarys to ensure functional correctness.  
 
 \bibliography{library}
 
