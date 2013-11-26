@@ -1,21 +1,21 @@
-%%% Preamble
+
 \documentclass[DIV=calc,paper=a4,fontsize=9pt,twocolumn]{scrartcl}
 \renewcommand*\sfdefault{lcmss}
-\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\renewcommand*\familydefault{\sfdefault} 
 \usepackage[T1]{fontenc}
 
 \usepackage{lipsum}                                                 
 \usepackage[utf8x]{inputenc}
-\usepackage[english]{babel}								% English language/hyphenation
-\usepackage[protrusion=true,expansion=true]{microtype}	% Better typography
-\usepackage{amsmath,amsfonts,amsthm}					% Math packages
-\usepackage[pdftex]{graphicx}							% Enable pdflatex
-\usepackage[svgnames]{xcolor}							% Enabling colors by their 'svgnames'
+\usepackage[english]{babel}								
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm}					
+\usepackage[pdftex]{graphicx}							
+\usepackage[svgnames]{xcolor}							
 
-\usepackage{epstopdf}									% Converts .eps to .pdf
-\usepackage{subfig}										% Subfigures
-\usepackage{booktabs}									% Nicer tables
-\usepackage{fix-cm}										% Custom fontsizes
+\usepackage{epstopdf}									
+\usepackage{subfig}										
+\usepackage{booktabs}									
+\usepackage{fix-cm}										
 \usepackage{csquotes}
 \usepackage[authoryear,round]{natbib}
 \usepackage{float}
@@ -23,73 +23,73 @@
 \definecolor{headblue}{HTML}{15778E}
 \definecolor{borderblue}{HTML}{074C5C}
 
-%%% Custom sectioning (sectsty package)
+
 \usepackage{sectsty}		
-							% Custom sectioning (see below)
-\allsectionsfont{\usefont{OT1}{phv}{b}{n}}				% Change font of al section commands
-														% bch-b-n: CharterBT-Bold font
+							
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}}				
+														
 
-\sectionfont{\usefont{OT1}{phv}{b}{n}}					% Change font of \section command
-														% bch-b-n: CharterBT-Bold font
+\sectionfont{\usefont{OT1}{phv}{b}{n}}					
+														
 
 
 
-%%% Headers and footers
-\usepackage{fancyhdr}									% Needed to define custom headers/footers
-    \pagestyle{fancy}									% Enabling the custom headers/footers
+
+\usepackage{fancyhdr}									
+    \pagestyle{fancy}									
 \usepackage{lastpage}   
 
-% Header (empty)
+
 \lhead{}
 \chead{}
 \rhead{}
-% Footer (you may change this to your own needs)
+
 \lfoot{\footnotesize 2013 \textbullet ~ Tools and Evaluation Methods used in Open Source Development}
 \cfoot{}
-\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}  % "Page 1 of 2"
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}  
 \renewcommand{\headrulewidth}{0.0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
 
 
-%%% Creating an initial of the very first character of the content
+
 \usepackage{lettrine}
-\newcommand{\initial}[1]{%
+\newcommand{\initial}[1]{
      \lettrine[lines=2,lhang=0.3,nindent=0em]{
                     \color{headblue}
                     {\textsf{#1}}}{}}
 
 
 
-%%% Title, author and date metadata
-\usepackage{titling}										% For custom titles
+
+\usepackage{titling}										
 
 \newcommand{\HorRule}{\color{headblue}\rule{\linewidth}{1pt}}
 
 \pretitle{\vspace{-30pt} \begin{flushleft}  \fontsize{30}{30} \usefont{OT1}{phv}{b}{n} \color{borderblue} \selectfont }
-\title{Tools and Evaluation Methods used in Open Source Development}    % Title of your article goes here
+\title{Tools and Evaluation Methods used in Open Source Development}    
 \posttitle{\par\end{flushleft}\vskip 0.5em}
 
 \preauthor{\begin{flushleft} \large \usefont{OT1}{phv}{b}{sl} \color{headblue}}
-\author{Steffen Tröster \\}											% Author name goes here
+\author{Steffen Tröster \\}											
 \postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
-                    University of Tampere, 2013							% Institution of author
+                    University of Tampere, 2013							
                     \par\end{flushleft}\HorRule}
 
-\date{}																% No date
+\date{}																
 
 
 
-%%% Begin document
+
 \begin{document}
 \maketitle
-\thispagestyle{fancy}		% Enabling the custom headers/footers for the first page 
-% The first character should be within \initial{}
+\thispagestyle{fancy}		
+
 \initial{O}ne says that the open source paradigm is one of the most promising strategies to improve the quality and efficiency of software development processes. This essay is introducing into the paradigm of open source, its software development model and its use of software engineering tools during the processes.
 
 It also reviews some evaluation models and a framework to choose the right evaluation model for the specific need. After this introduction it will give an example how to use automated quality assurance with two sample open source projects based on different technologies.
 
-% After this introducing part the essay will review an evaluation of the open source paradigm by \citet{fuggetta2003open} and will try to show up typically evaluation properties with affiliated measurements.
+\citet{fuggetta2003open} and will try to show up typically evaluation properties with affiliated measurements.
 
 \section{Introduction}
 
@@ -151,22 +151,9 @@ This essay will review respective one of the major concerts. First the Selection
 
 \subsection{Selection Process of Open Source Software}
 
-The Selection Process of Open Source Software is focusing on offering a metric to compare different open source solutions for a given issue or problem in companies. Because it is difficult to identify the target open source software which is satisfying the systems requirements among all other open source projects. \citep{lee2007study}
+The Selection Process of Open Source Software is focusing on offering a specified method to compare different open source solutions for a given issue or problem in companies. Because it is often difficult to identify the target open source software which is satisfying the systems requirements among all other open source projects. \citep{lee2007study}
 
 \enquote{Without a formal methodology that implements a standardized analytical framework, organizations are limited in their ability to assess the maturity of a product.} \citep{golden08}
-
-\citet{lee2007study} are saying that although it is possible to identify some open source systems satisfying requirements, there isn't a variety specification to gain. This is because this system communities doesn't provide information for analyzing. Hence these step cause many trials and errors and there is a need to solve these problems.
-
-The selection process shown by \citet{lee2007study} is based on five steps, which can be seen in Figure \ref{fig:selection-process.png}:
-
-\begin{enumerate}
-    \item Identifying Requirements: What requirements are required by the open source system?
-    \item Identifying first OSS Candidate: By selecting keywords out of the requirements, the first candidates can be selected by searching for this keywords and given conditions like running platform or used language.
-    \item Identifying second OSS Candidate: Searching for exceptions and quality requirements in NFRs to restrict the choice.
-    \item Establishing Assessment Criteria: This step identifies open source software candidates and arranges to evaluate them, and decides weight on detailed function of each module and maps candidates to prepare for evaluation.
-    \item OSS Assessing and Selecting: This step carries out an evaluation of the selected open source systems which will be used for the given issue. 
-\end{enumerate}
-
 
 \begin{figure}[ht]
     \includegraphics[width=0.5\textwidth ]{img/selectionprocess.png}{}
@@ -174,11 +161,24 @@ The selection process shown by \citet{lee2007study} is based on five steps, whic
     \caption{Selection Process of OSS. \citet{lee2007study}}\label{fig:selection-process.png}
 \end{figure}
 
-\subsection{Source Quality Observatory for Open Source Software}
+\citet{lee2007study} are saying that although it is possible to identify some open source systems satisfying requirements, there isn't a variety specification to gain. This is because this system communities doesn't provide product or project information for analyzing and comparing. Hence these step cause many trials and errors and there is a need to solve these problems.
 
-The SQO-OSS model by \citet{samoladas2008sqo} is focusing on automated software quality assurance. This enables an automatic metrics collection approach and thereby a continuous quality monitoring system can be established which can be seen in Chapter \ref{sec:automated-quality-assurance}. It also takes the community factors into account if only those community factors that can be measured automatically. Next these two community factors it also focuses on the fundamental aspects of open source software quality like the project maintainability, reliability and security.
 
-This model is subdividing every criteria until it is automatically measurable by analyzing source code factors and community attributes. Figure \ref{fig:sqs-oss} is showing the different levels of quality criteria with each subdivision for the specific measurement. Metrics defined by \citet{samoladas2008sqo} are for example for the criteria Changeability: Average size of statements, Vocabulary frequency, Number of unconditional jumps, Number of nested levels, Coupling between objects (CBO), Lack of cohesion (LCOM) and Depth of inheritance tree (DIT). On the community side the metrics for example of the criteria Maturity are: Number of open critical bugs in the last 6 months and Number of open bugs in the last six months. The measurement for this criteria are specified in categories Excellent (E), Good (G), Fair (F) and Poor (P). \citep{samoladas2008sqo}
+The selection process shown by \citet{lee2007study} is based on five steps, which can be seen in Figure \ref{fig:selection-process.png} with some sub actions:
+
+\begin{enumerate}
+    \item Identifying Requirements: What requirements are required by the open source system to solve the companies problem and reach its goal?
+    \item Identifying first OSS candidates: By selecting keywords out of the requirements, the first candidates can be selected by searching for this keywords and given conditions like running platform or used programming language.
+    \item Identifying second level OSS candidates: Searching for exceptions and quality requirements in the not functional requirements to restrict the choice of first level OSS candidates.
+    \item Establishing Assessment Criteria: This step identifies open source software candidates and arranges to evaluate them, and decides weight on detailed function of each module and maps candidates to prepare for evaluation.
+    \item OSS Assessing and Selecting: This step carries out an evaluation of the selected open source systems which will be used for the given issue. 
+\end{enumerate}
+
+To ensure a specific software quality of the given information system an evaluation method in the last two steps is necessary. In the following part a automatic software quality assurance evaluation with specified metrics is reviewed. This evaluation method can also used in the step op \enquote{Establishing Assessment Criteria} of this methodology.
+
+\subsection{Source Quality Observatory for Open Source Software}\label{sec:sqsoss}
+
+The SQO-OSS model by \citet{samoladas2008sqo} is focusing on automated software quality assurance. This enables an automatic metrics collection approach and thereby a continuous quality monitoring system can be established which can be seen in Chapter \ref{sec:automated-quality-assurance}. It also takes the community factors into account if only those community factors that can be measured automatically. These factors are also mainly focusing on the fundamental aspects of open source software quality like the project maintainability, reliability and security. 
 
 \begin{figure}[ht]
     \includegraphics[width=0.5\textwidth ]{img/sqsoss.png}{}
@@ -186,11 +186,16 @@ This model is subdividing every criteria until it is automatically measurable by
     \caption{The SQS-OSS quality model. \citet{samoladas2008sqo}}\label{fig:sqs-oss}
 \end{figure}
 
+This model is subdividing every criteria of software quality until it is automatically measurable by analyzing source code factors and community attributes. Figure \ref{fig:sqs-oss} is showing the different levels of quality criteria with each subdivision for the specific measurement. 
+
+Metrics defined by \citet{samoladas2008sqo} are for example for the criteria Changeability: Average size of statements, Vocabulary frequency, Number of unconditional jumps, Number of nested levels, Coupling between objects (CBO), Lack of cohesion (LCOM) and Depth of inheritance tree (DIT). On the community side the metrics for example of the criteria Maturity are: Number of open critical bugs in the last 6 months and Number of open bugs in the last six months. The measurement for this criteria are quantified in the following four categories Excellent (E), Good (G), Fair (F) and Poor (P). \citep{samoladas2008sqo}
+
+
 \subsection{Comparison Framework for Open Source Software Evaluation Methods}
 
-Now the important question is, how to choose between all the different evaluation methods. \citet{stol2010comparison} have already shown the 20 different evaluation methods. They also show if these method comes from industry or research and if it provide a well-defined procedure for applying or not. Next to these information they also offering a framework to compare these evaluation methods.
+Now the important question is, how to choose between all the different evaluation methods. \citet{stol2010comparison} have already shown the 20 different evaluation methods. They also show if these method comes from industry or research and if it provide a well-defined procedure for applying or not. They are also saying that the specific approach is more and more depending on the needed information and subject of scope. 
 
-They call it Framework Framework fOr Comparing Open Source Software Evaluation Methods (FOCOSEM). The following list of metrics are a short overview of this Framework
+Next to these information \citet{stol2010comparison} are also offering a framework to compare these evaluation methods. They call it Framework fOr Comparing Open Source Software Evaluation Methods (FOCOSEM). The following list of criteria are a short overview of this Framework:
 
 \begin{enumerate}
     \item Method Context
@@ -221,15 +226,27 @@ They call it Framework Framework fOr Comparing Open Source Software Evaluation M
 
 \enquote{We note that the objective of FOCOSEM is not to make any judgments about different OSS evaluation methods. Instead, we aim to provide insights that may help practitioners to select a suitable OSS evaluation method.} \citep{stol2010comparison}
 
-\section{Automated Quality Assurance\label{sec:automated-quality-assurance}}
+\section{Automated Quality Assurance}\label{sec:automated-quality-assurance}
 
 This chapter will deal with an approaches for automated quality assurance. I personally think that an automated quality assurance process can be established in every open source project during the testing and/or continues integration. I'm going to show this with two projects which have a completely different technology stack. 
 
-The first project is called georeport and it is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development. The second open source project is called amcgala. It is a pedagogical graphic framework based on Java.
+The first project is called georeport and it is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development so that a automated quality assurance system could come quite handy. The second open source project is called amcgala a pedagogical graphic framework based on Java.
 
-\subsection{Continues Integration in georeport}
+Both projects are available on Github:
 
-This nodeJS based project is using different librarys to ensure functional correctness.  
+\begin{enumerate}
+    \item georeport - https://github.com/stetro/georeport
+    \item amcgala - https://github.com/amcgala/amcgala
+\end{enumerate}
+
+\citet{van2002java} are saying that software inspection is a well known technique for improving the software quality. This method is traditionally a formal process that involves analysts with manual analysis techniques such as formal code reviews and structured walk-through. This inspection is a specified and systematic process which is mostly well guided and defined. Therefor there are a lot of analytic tools available to automate this process. Next to the described source analytics to find code smells in projects by \citet{van2002java} there is the possibility to expand this approach to social factors of software quality and quality of open source software as it is earlier described in the SQO-OSS quality model of chapter \ref{sec:sqsoss} by \citet{samoladas2008sqo}
+
+\subsection{Assurance in georeport}
+
+This nodeJS based project is using different libraries to ensure functional correctness.  
+
+\subsection{Assurance in amcgala}
+
 
 \bibliography{library}
 
