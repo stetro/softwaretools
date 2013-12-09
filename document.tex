@@ -19,6 +19,7 @@
 \usepackage{csquotes}
 \usepackage[authoryear,round]{natbib}
 \usepackage{float}
+\usepackage{url}
 \bibliographystyle{apalike}
 \definecolor{headblue}{HTML}{15778E}
 \definecolor{borderblue}{HTML}{074C5C}
@@ -87,9 +88,7 @@
 
 \initial{O}ne says that the open source paradigm is one of the most promising strategies to improve the quality and efficiency of software development processes. This essay is introducing into the paradigm of open source, its software development model and its use of software engineering tools during the processes.
 
-It also reviews some evaluation models and a framework to choose the right evaluation model for the specific need. After this introduction it will give an example how to use automated quality assurance with two sample open source projects based on different technologies.
-
-\citet{fuggetta2003open} and will try to show up typically evaluation properties with affiliated measurements.
+It also reviews some evaluation models and a framework to choose the right evaluation model for the specific need. After this introduction it will give an example how to use automated quality assurance with an open source project based NodeJS technologies and established with continues integration.
 
 \section{Introduction}
 
@@ -123,7 +122,7 @@ Back to the model of \citet{Haddad11}, each process is constituting a special ty
 
 The most important action, which is done in every process of the open source software development model is communication. Almost every project is using mailing lists to discuss design decisions and new features and approaches with the developer and user community. Some projects are using asynchronous communication like IRC in addition, but it is still a more or less organized communication process. Next to these direct communication techniques, there are are also the projects websites, FAQ's and Wikis in use to communicate news and important information about the project to users which are not participating. \citep{ApacheFoundation13} 
 
-An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{Github Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision.
+An even more organized communication are offering issue-tracker or ticket-systems like \enquote{Bugzilla} or the \enquote{GitHub Issue-Tracker}. With those trackers it is possible to collect a lot of information from users and developers about bugs, reports, features and ideas and they offer also a way to rate or prioritize them. After a decision is made by the community each report can be assigned to a special developer or group which is solving or implementing the made decision.
 
 \subsection{Version Control and Collaboration}
 
@@ -232,24 +231,15 @@ Next to these information \citet{stol2010comparison} are also offering a framewo
 
 \section{Automated Quality Assurance}\label{sec:automated-quality-assurance}
 
-This chapter will deal with an approaches for automated quality assurance. I personally think that an automated quality assurance process can be established in every open source project during the testing and/or continues integration. I'm going to show this with two projects which have a completely different technology stack. 
+This chapter will deal with an approach for automated quality assurance. I personally think that an automated quality assurance process can be established in every open source project during the testing and/or continues integration. I'm going to show this example approach with a projects which is called georeport which is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development so that a automated quality assurance system could come quite handy. This project is available on GitHub and can be found at https://github.com/stetro/georeport.
 
-The first project is called georeport and it is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development so that a automated quality assurance system could come quite handy. The second open source project is called amcgala a pedagogical graphic framework based on Java.
-
-Both projects are available on Github:
-
-\begin{enumerate}
-    \item georeport - https://github.com/stetro/georeport
-    \item amcgala - https://github.com/amcgala/amcgala
-\end{enumerate}
+The aim of the georeport project is to develop an open source solution for servers to provide a simple REST based open311 API. This open standard open311 is a standard specification for a collaborative civic issue tracking \citep{open311}.
 
 \citet{van2002java} are saying that software inspection is a well known technique for improving the software quality. This method is traditionally a formal process that involves analysts with manual analysis techniques such as formal code reviews and structured walk-through. This inspection is a specified and systematic process which is mostly well guided and defined. Therefor there are a lot of analytic tools available to automate this process. Next to the described source analytics to find code smells in projects by \citet{van2002java} there is the possibility to expand this approach to social factors of software quality and quality of open source software as it is earlier described in the SQO-OSS quality model of chapter \ref{sec:sqsoss} by \citet{samoladas2008sqo}
 
-\subsection{Assurance in georeport}
+In the first part a possible product quality assurance will be shown. After this an example of community quality assurance will also be presented.
 
-The aim of this project is to develop an open source solution for servers to provide a simple REST based open311 API. This open standard open311 is a standard specification for a collaborative civic issue tracking \citep{open311}. In the first part a possible product quality assurance will be shown. After this an example of community quality assurance will also be presented.
-
-\subsubsection{Product Quality}
+\subsection{Product Quality}
 
 NodeJS and the associated package control manager \enquote{npm} offer a lot of open source modules for measuring code complexity and quality with different approaches. Such modules are for example \enquote{jslint}, \enquote{escomplex} and \enquote{jscheckstyle}. The most significant analyze module in view of code complexity is given by escomplex. It is based on different research approaches for measuring complexity or maintainability such as \enquote{A Complexity Measure} by \citet{mccabe1976complexity} or \enquote{Cyclomatic Complexity Density and Software Maintenance Productivity} by \citet{gill1991cyclomatic}.
 
@@ -263,19 +253,34 @@ The used Metrics in escomplex for measuring the code quality and complexity are 
     \item Halstead metrics: This Metric is defined by Maurice Halstead in 1977 \citep{zuse2005resolving} and they are calculated from numbers of operators and operands in each function. Lower is better.
     \item Maintainability index: This Metric is defined by \citet{oman1992metrics} and it is a logarithmic scale from negative infinity to 171, calculated from the logical lines of code, the cyclomatix complexity and the Halstead effort. Higher is better.
     \item Dependencies: This metric is counting the use of JavaScript require method to make a new library dependency. Lower is better.
-    \item First-order density: The percentage of all possible internal dependencies that are actually realised in the project. Lower is better.
+    \item First-order density: The percentage of all possible internal dependencies that are actually realized in the project. Lower is better.
     \item Change cost: The percentage of modules affected, on average, when one module in the project is changed. Lower is better.
     \item Core size: The percentage of modules that are both widely depended on and themselves depend on other modules. Lower is better.
 \end{enumerate}
 
-\subsubsection{Community Quality}
+\subsection{Community Quality}
 
-\subsection{Assurance in amcgala}
+Next to the product quality metrics as shown below it is also possible to measure community attributes on GitHub. The project host GitHub is offering a huge API where everyone can interact with to create own tools which improve the open source software development work flows. Next to the management tasks and resources which are offered by this API there are also a lot of informations to measure the community quality in the way of SQS-OSS model. \citep{githubAPI2013}
 
+To get access to the offered API GitHub also offers a huge list of own or third party libraries for every different programming language. This library, called Octocat, is also available for node (octonode) to get the following SQS-OSS attributes:
+
+\begin{enumerate}
+    \item Counting critical issues, bug fixings and overall issues of the last several month to ensure project activity and project maturity. 
+    \item Analyzing the developer base with counting the project subscriber, star giver, collaborators and project contributers.
+    \item Development activity is also measured by counting the last commits and commits of the last several days.
+\end{enumerate}
+
+\subsection{Automation}
+
+The georeport project is as TravisCI project established. Every time someone is doing a commit to the project the continues integration services TravisCI is taking the whole project from GitHub and is running every available test in this project to ensure that is still valid with respect to the given tests. As we think about the quality tests described before, they can also be run every single time someone committed something new to the project. May the problem with this approach is that the whole project build fails when a single quality test fails. May there should be a separate state to show the status of \enquote{Quality Assurance}.
 
 \section{Conclusion}
 
+The open source software development paradigm is one of the most upcoming way of new software development. But it is not about free software, its the idea of collaborating and giving the project the chance to get contributed by new ideas from programmers with different culture and needs. The used tools such as communication tools, version control tools and testing tools are the fundamental pieces to ensure this approach of collaborative work.
 
+To benefit as user of open source software by this approach of open source development these huge amount of upcoming new software still need to be evaluated. Evaluation can be done to ensure that a searched open source product comes close to the actual needs of a given use case or to ensure product quality in view of maintainability, security and reliability. To do this evaluation \citet{stol2010comparison} showed us about 20 evaluation frameworks and also a framework to compare and choose the right one for a specific need.
+
+In the last part of this essay I tried to establish an example of automated quality assurance in a NodeJS bases open source product called georeport.
 
 \bibliography{library}
 
