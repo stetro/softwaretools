@@ -229,6 +229,22 @@ Next to these information \citet{stol2010comparison} are also offering a framewo
 
 \enquote{We note that the objective of FOCOSEM is not to make any judgments about different OSS evaluation methods. Instead, we aim to provide insights that may help practitioners to select a suitable OSS evaluation method.} \citep{stol2010comparison}
 
+\subsection{Open Source Software Success}
+
+An other way of evaluation is measuring the success of open source software projects which is already done by a some studies which are qualitative or exploratory in nature. This evaluation of open source software success is important for future project improvements because statistics are showing that 58\% of projects in Sourceforge, which is a open source project host, since 2005 where failing. 
+
+\citet{lee2009measuring} have developed a model to identify five determinants for OSS success as well as a number of significant relationships between them. They extended the \citet{delone1992information} success framework for IS in respect of its updates by \citet{seddon1997respecification} and them self ten years later in scope of open source software development. They applied the IS success model to the OSS context and found that the OSS success model shared similarities and differences with other contexts. 
+
+The model in figure \ref{fig:success-model} is showing the the five determinants: software quality, community service quality, user satisfaction, open source software use, and individual net benefits and the positive influence of each other (H*). With their research they are demonstrating that software quality and community service quality have decisive effects on user satisfaction. \citep{lee2009measuring}
+
+\begin{figure}[ht]
+    \includegraphics[width=0.5\textwidth ]{img/success-model.png}{}
+    \centering
+    \caption{Extended research model by \citet{lee2009measuring}}\label{fig:success-model}
+\end{figure}
+
+\enquote{Software quality and user satisfaction, in turn, have significant effects on OSS use. Additionally, OSS use and user satisfaction have significant effects on individual net benefits.} \citep{lee2009measuring}
+
 \section{Automated Quality Assurance}\label{sec:automated-quality-assurance}
 
 This chapter will deal with an approach for automated quality assurance. I personally think that an automated quality assurance process can be established in every open source project during the testing and/or continues integration. I'm going to show this example approach with a projects which is called georeport which is going to get a nodeJS based open311 georeport v2 API implementation. That means the project just started and is currently under development so that a automated quality assurance system could come quite handy. This project is available on GitHub and can be found at https://github.com/stetro/georeport.
@@ -270,6 +286,8 @@ To get access to the offered API GitHub also offers a huge list of own or third 
     \item Development activity is also measured by counting the last commits and commits of the last several days.
 \end{enumerate}
 
+This way of measuring can still be extended by using statistic measuring and analyzing values over a certain time period to consider the evolution of this project. 
+
 \subsection{Automation}
 
 The georeport project is as TravisCI project established. Every time someone is doing a commit to the project the continues integration services TravisCI is taking the whole project from GitHub and is running every available test in this project to ensure that is still valid with respect to the given tests. As we think about the quality tests described before, they can also be run every single time someone committed something new to the project. May the problem with this approach is that the whole project build fails when a single quality test fails. May there should be a separate state to show the status of \enquote{Quality Assurance}.
@@ -278,7 +296,9 @@ The georeport project is as TravisCI project established. Every time someone is 
 
 The open source software development paradigm is one of the most upcoming way of new software development. But it is not about free software, its the idea of collaborating and giving the project the chance to get contributed by new ideas from programmers with different culture and needs. The used tools such as communication tools, version control tools and testing tools are the fundamental pieces to ensure this approach of collaborative work.
 
-To benefit as user of open source software by this approach of open source development these huge amount of upcoming new software still need to be evaluated. Evaluation can be done to ensure that a searched open source product comes close to the actual needs of a given use case or to ensure product quality in view of maintainability, security and reliability. To do this evaluation \citet{stol2010comparison} showed us about 20 evaluation frameworks and also a framework to compare and choose the right one for a specific need.
+To benefit as user of open source software by this approach of open source development these huge amount of upcoming new software still need to be evaluated. Evaluation can be done to ensure that a searched open source product comes close to the actual needs of a given use case or to ensure product quality in view of maintainability, security and reliability. To carry out this evaluation \citet{stol2010comparison} showed us about 20 evaluation frameworks and also a framework to compare and choose the right one for a specific need.
+
+Another important evaluation is the success analysis for information systems by \citet{delone1992information}. This model and also the newer version developed by them self ten years later is strongly context based and does not fit into the open source software scope. Thats why there was a need for a new model which is developed by \citet{lee2009measuring} who was revising the models by \citet{delone1992information} to the open source approach.
 
 In the last part of this essay I tried to establish an example of automated quality assurance in a NodeJS bases open source product called georeport.
 
