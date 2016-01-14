@@ -1,4 +1,4 @@
-Tools and Evaluation Methods used in Open Source Development 
+Tools and Evaluation Methods used in Open Source Development [![PDF Status](https://www.sharelatex.com/github/repos/stetro/softwaretools/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/stetro/softwaretools/builds/latest/output.pdf)
 ============================================================
 
 > An essay for a course called Software Tools and Evaluation at UTA, Tampere in Finnland
